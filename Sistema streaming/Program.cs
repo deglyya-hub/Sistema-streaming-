@@ -14,6 +14,7 @@ do
     {
         case 1:
             Console.WriteLine("""Usted ha elegido "Evaluar Contenido""");
+
             break;
         case 2:
             Console.WriteLine("""Usted ha elegido "Mostrar reglas del sistema""");
@@ -32,6 +33,7 @@ do
             break;
     }
 } while (opcion != 5);
+
 
 
 
