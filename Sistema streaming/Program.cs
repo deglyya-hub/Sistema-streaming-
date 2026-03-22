@@ -2,7 +2,7 @@
 int opcion;
 do
 {
-
+ 
     Console.WriteLine("----------------MENÚ----------------");
     Console.WriteLine("SISTEMA DE UNA PLATAFORMA DE STREAMING");
     Console.WriteLine("Seleccione una opcion :)  ");
@@ -61,7 +61,22 @@ do
                 Console.WriteLine("3. Alto");
                 produccion = int.Parse(Console.ReadLine());
             }
-            Console.WriteLine("Se han ingresado los datos.");
+            // VALIDACIÓN DE CONTENIDO
+            // validaciónes por clasificación y horario
+            if ( clasificacion == 3 && !(hora >= 22 || hora <=5) )
+            {
+                Console.WriteLine("Rechazado. Contenido +18 solo entre 22:00 y 5:00 (hrs)");
+            }
+            else if (clasificacion == 2 && !(hora >=6 && hora <22))
+            {
+                Console.WriteLine("Rechazado. Contenido +13 solo entre 6:00 y 22:00");
+            }
+            else
+            {
+                Console.WriteLine("Su contenido a sido aprobado");
+            }
+        
+
 
             break;
         case 2:
