@@ -106,16 +106,50 @@ do
             bool validacionProduccion = false;
             if (produccion == 1 && clasificacion == 3)
             {
-                validacionDuracion = false;
+                validacionProduccion = false;
                 Console.WriteLine("Rechazado. Producción Baja no permite contenido +18");
             }
             else
             {
-                validacionDuracion = true;
+                validacionProduccion = true;
                 Console.WriteLine("Aprobado3");
             }
+          
+            bool reglastecnicas = false;
+            if (validacionHorario == true && validacionDuracion == true && validacionProduccion == true)
+            {
+                reglastecnicas = true;
+            }
+            else
+            {
+                reglastecnicas = false;
+                Console.WriteLine("El contenido incumple con algunas normas.");
+            }
+            /* Clasificacion de Impacto*/
+             
+            if (reglastecnicas == true)
+            {
+                bool impactoAlto = false;
+                bool impactoMedio = false;
+                bool impactoBajo = false;
+                //Alto
+                if (produccion == 3 || duracion >120 || (hora>=20 && hora <=23))
+                {
+                    impactoAlto = true;
+                }
+                //Medio
+                else if (produccion == 2 || (duracion >=60 && duracion <=120))
+                {
+                    impactoMedio = true;
+                }
+                //Bajo
+                else if (produccion == 1 && duracion < 60)
+                {
+                    impactoBajo = true;
+                }
+              
+            }
 
-            //Clasificación de Impacto
             
 
 
