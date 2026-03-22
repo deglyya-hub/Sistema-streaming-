@@ -63,8 +63,11 @@ do
             }
             // VALIDACIÓN DE CONTENIDO
             // validaciónes por clasificación y horario
+
+            bool validacionHorario = false;
             if ( clasificacion == 3 && !(hora >= 22 || hora <=5) )
             {
+                
                 Console.WriteLine("Rechazado. Contenido +18 solo entre 22:00 y 5:00 (hrs)");
             }
             else if (clasificacion == 2 && !(hora >=6 && hora <22))
@@ -73,8 +76,49 @@ do
             }
             else
             {
+                validacionHorario = true;
                 Console.WriteLine("Su contenido a sido aprobado");
             }
+            // Validación con duración por tipo
+            bool validacionDuracion = false;
+            if (tipo == 1 && !(duracion >= 60 && duracion <= 180))
+            {
+                Console.WriteLine("Rechazado. La duración tiene que ser de 60 a 180 minutos.");
+            }
+            else if (tipo == 2 && !(duracion >=20 && duracion <= 90))
+            {
+                Console.WriteLine("Rechazado. La duración tiene que ser de 20 a 90 minutos.");
+            }
+            else if (tipo == 3 && !(duracion >=30 && duracion <= 120))
+            {
+                Console.WriteLine("Rechazado. La duración tiene que ser de 30 a 120 minutos.");
+            }
+            else if (tipo == 4 && !(duracion >= 30 && duracion <=240))
+            {
+                Console.WriteLine("Rechazado. La duración tiene que ser de 30 a 240 minutos.");
+            }
+            else
+            {
+                validacionDuracion = true;
+                Console.WriteLine("Su contenido a sido aprobado2");
+            }
+            // Validación con producción 
+            bool validacionProduccion = false;
+            if (produccion == 1 && clasificacion == 3)
+            {
+                validacionDuracion = false;
+                Console.WriteLine("Rechazado. Producción Baja no permite contenido +18");
+            }
+            else
+            {
+                validacionDuracion = true;
+                Console.WriteLine("Aprobado3");
+            }
+
+            //Clasificación de Impacto
+            
+
+
         
 
 
