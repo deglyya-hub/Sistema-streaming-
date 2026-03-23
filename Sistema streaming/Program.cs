@@ -183,7 +183,7 @@ class program
         // 
         for (int i = 1; i<=3; i++)
         {
-            Console.WriteLine("Procesando evaluación... Paso " + i);
+            Console.WriteLine("Procesando evaluación...  " + i);
         }
         bool valido = ValidacionTecnica(tipo, duracion, clasificacion, hora, produccion);
 
