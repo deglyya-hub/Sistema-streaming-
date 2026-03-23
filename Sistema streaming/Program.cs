@@ -49,7 +49,11 @@ class program
                     break;
                 case 5:
                     Console.WriteLine("Saliendo...");
+                    Console.WriteLine("----------RESUMEN FINAL DE LA SESIÓN----------");
+                    MostrarEstadisticas();
+                    Console.WriteLine("Gracias por utilizar el sistema :)");
                     break;
+                    
                 default:
                     Console.WriteLine("Opcion Invalida");
                     break;
@@ -78,7 +82,7 @@ class program
         int duracion = 0;
         while (duracion <= 0)
         {
-            Console.WriteLine("Ingrese el tiempo en minutos");
+            Console.WriteLine("Ingrese el tiempo en minutos (duracion)");
             duracion = int.Parse(Console.ReadLine());
         }
         return duracion;
